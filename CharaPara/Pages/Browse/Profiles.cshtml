@@ -1,0 +1,22 @@
+﻿@page
+@model CharaPara.Pages.Browse.ProfilesModel
+@{
+}
+
+<h1>Browse Profiles</h1>
+
+<hr />
+
+<h3> Recent Profiles </h3>
+<div class="row">
+    @foreach (var profile in Model.RecentProfileList)
+    {
+        <div class="col-md-6 col-lg-4 col-xl-3" href="../Profile/@profile.Id">
+            <partial name="_ProfileCard" model="profile" view-data="@(new ViewDataDictionary(ViewData) { { "LinkOnNewTab", "1" } })" />
+        </div>
+
+    }
+    
+</div>
+
+<hr />

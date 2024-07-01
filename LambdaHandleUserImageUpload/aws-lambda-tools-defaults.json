@@ -1,0 +1,27 @@
+
+{
+    "Information" : [
+        "This file provides default values for the deployment wizard inside Visual Studio and the AWS Lambda commands added to the .NET Core CLI.",
+        "To learn more about the Lambda commands with the .NET Core CLI execute the following command at the command line in the project root directory.",
+        "dotnet lambda help",
+        "All the command line options for the Lambda command can be specified in this file."
+    ],
+    "profile"     : "shm-anypara",
+    "region"      : "us-east-1",
+    "configuration" : "Release",
+    "function-runtime" : "dotnet8",
+    "function-memory-size" : 512,
+    "function-timeout"     : 30,
+    "function-handler"     : "LambdaHandleUserImageUpload::LambdaHandleUserImageUpload.Function::FunctionHandler",
+    "framework"            : "net8.0",
+    "function-name"        : "APLambdaHandleUserImageUpload",
+    "function-description" : "Filters user uploads and generates thumbnails.",
+    "package-type"         : "Zip",
+    "function-role"        : "arn:aws:iam::654654472632:role/service-role/aplambda",
+    "function-architecture" : "arm64",
+    "function-subnets"      : "",
+    "function-security-groups" : "",
+    "tracing-mode"             : "PassThrough",
+    "environment-variables"    : "\"OBJECT_METADATA_IMAGE_TYPE_NAME\"=\"ImageType\";\"IMAGE_DIMENSIONS_DEFAULT\"=\"2000\";\"THUMBNAIL_DIMENSIONS_GALLERYIMAGE\"=\"128\";\"DESTINATION_BUCKET_NAME\"=\"apcdnuseruploadaccess\"",
+    "image-tag"                : ""
+}

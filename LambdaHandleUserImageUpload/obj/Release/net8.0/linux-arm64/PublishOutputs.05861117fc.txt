@@ -1,0 +1,10 @@
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\LambdaHandleUserImageUpload.deps.json
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\LambdaHandleUserImageUpload.runtimeconfig.json
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\LambdaHandleUserImageUpload.pdb
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\Amazon.Lambda.Core.dll
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\Amazon.Lambda.S3Events.dll
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\Amazon.Lambda.Serialization.SystemTextJson.dll
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\AWSSDK.Core.dll
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\AWSSDK.S3.dll
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\SixLabors.ImageSharp.dll
+D:\Users\Jordan\Documents\Visual Studio 2022\Projects\ParaAlpha\LambdaHandleUserImageUpload\bin\Release\net8.0\publish\LambdaHandleUserImageUpload.dll

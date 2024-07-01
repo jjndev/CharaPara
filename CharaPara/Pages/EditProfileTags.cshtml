@@ -1,0 +1,48 @@
+﻿@page
+@model CharaPara.Pages.EditProfileTagsModel
+
+
+
+<input type="search" id="searchBox" placeholder="Search..." onkeyup="searchDatabase()" />
+<div id="searchResults"></div>
+
+
+
+
+
+<form method="post">
+            
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group row">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    <script>
+        function searchDatabase() {
+            var searchQuery = document.getElementById('searchBox').value;
+            fetch('/SearchForTag?q=' + searchQuery)
+                .then(response => response.json())
+                .then(data => {
+                    var resultsContainer = document.getElementById('searchResults');
+                    resultsContainer.innerHTML = ''; // Clear previous results
+                    data.forEach(item => {
+                        // Assuming item has 'Name' property to display
+                        resultsContainer.innerHTML += `<p>${item.name} <small>${item.description}</small></p>`;
+                    });
+                });
+        }
+    </script>
+}

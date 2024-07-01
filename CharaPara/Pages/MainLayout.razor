@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@inherits LayoutComponentBase
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+<AuthorizeView>
+    <Authorized>
+        <NavMenu />
+        <div class="content px-4">
+            @Body
+        </div>
+    </Authorized>
+    <NotAuthorized>
+        <div class="content px-4">
+            <h3>You are not authorized to view this content.</h3>
+            <a href="account/login">Login</a>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>
+</body>
+</html>
+

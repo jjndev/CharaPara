@@ -1,0 +1,153 @@
+﻿@page "/Profile/EditProfile"
+@model EditProfileModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+}
+
+<h1>Edit</h1>
+
+<h4>Profile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form method="post" asp-page="/Profile/EditProfile">
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProfileVM.Id" />
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label asp-for="ProfileVM.Name" class="control-label"></label>
+                </div>
+                <div class="col-md-8">
+                    <input asp-for="ProfileVM.Name" class="form-control" />
+                    <span asp-validation-for="ProfileVM.Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ProfileVM.Gender" class="control-label"></label>
+                <select asp-for="ProfileVM.Gender" asp-items="Html.GetEnumSelectList<Data.Model.Gender>()" class="form-control" placeholder="The gender that best describes your character."></select>
+                <span asp-validation-for="ProfileVM.Gender" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label class="control-label">Content Tags</label>
+                </div>
+                <div class="col-md-8">
+                   
+                    <input type="checkbox" asp-for="ProfileVM.IsMature" checked="@(Model.ProfileVM.IsMature)" />
+                    <label asp-for="ProfileVM.IsMature" class="control-label"></label>
+                    
+                    <input type="checkbox" asp-for="ProfileVM.IsSensitive" checked="@(Model.ProfileVM.IsSensitive)" />
+                    <label asp-for="ProfileVM.IsSensitive" class="control-label"></label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    
+                    <span title="A short description of who and what your character is. 
+Could include their occupation, home, species, or relation to another character.
+E.g. 'King of England', 'Elven Mercenary', 'Young Adventurer', 'Witch's Familiar', 'Kind Barmaid' ">
+                        <label asp-for="ProfileVM.Title" class="control-label"></label>
+
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <input asp-for="ProfileVM.Title" class="form-control" />
+                    <span asp-validation-for="ProfileVM.Title" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label asp-for="ProfileVM.Summary" class="control-label"></label>
+                </div>
+                <div class="col-md-8">
+                    <textarea asp-for="ProfileVM.Summary" class="form-control"></textarea>
+                    <span asp-validation-for="ProfileVM.Summary" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label asp-for="ProfileVM.TextColor" class="control-label"></label>
+                </div>
+                <div class="col-md-8">
+                    <div>debug text color: @Model.ProfileVM.TextColor</div>
+                    <input type="color" asp-for="ProfileVM.TextColor" value="@Model.ProfileVM.TextColor" class="form-control" />
+                    <span asp-validation-for="ProfileVM.TextColor" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label asp-for="ProfileVM.ProfileColor" class="control-label"></label>
+                </div>
+                <div class="col-md-8">
+                    <input type="color" asp-for="ProfileVM.ProfileColor" value="@Model.ProfileVM.ProfileColor" class="form-control" />
+                    <span asp-validation-for="ProfileVM.ProfileColor" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label asp-for="ProfileVM.BorderColor" class="control-label"></label>
+                </div>
+                <div class="col-md-8">
+                    <input type="color" asp-for="ProfileVM.BorderColor" value="@Model.ProfileVM.BorderColor" class="form-control" />
+                    <span asp-validation-for="ProfileVM.BorderColor" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <label asp-for="ProfileVM.SearchTagString" class="control-label"></label>
+                </div>
+                <div class="col-md-8">
+                    <input asp-for="ProfileVM.SearchTagString" id="searchTagIdString" value="@Model.ProfileVM.SearchTagString" />
+                    <span asp-validation-for="ProfileVM.SearchTagString" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () { 
+            //store values from the searchTagIdString into an array
+            var searchTagIdString = document.getElementById("searchTagIdString").value;
+            var searchTagIds = searchTagIdString.split(";");
+        
+        }
+
+        function searchDatabase() {
+            var searchQuery = document.getElementById('searchBox').value;
+            fetch('/SearchForTag?q=' + searchQuery)
+                .then(response => response.json())
+                .then(data => {
+                    var resultsContainer = document.getElementById('searchResults');
+                    resultsContainer.innerHTML = ''; // Clear previous results
+                    data.forEach(item => {
+                        // Assuming item has 'Name' property to display
+                        resultsContainer.innerHTML += `<span class="badge badge-secondary" name="${item.description}">${item.name}</span>`;
+                    });
+                });
+        }
+    </script>
+    }
+}

@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Trueno Light';
+    src: url('/font/TruenoLight.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Josefin Sans Thin';
+    src: url('/font/JosefinSans.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Ledger';
+    src: url('/font/Ledger.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Merriweather';
+    src: url('/font/Merriweather.ttf') format('truetype');
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    font-family: 'Merriweather', 'Trueno Light', Roboto, Arial, Verdana, sans-serif;
+}
+
+body {
+    margin-bottom: 60px;
+    /*font-family: 'Merriweather', 'Trueno Light', Roboto, Arial, Verdana, sans-serif;*/
+    font-family: 'Josefin Sans Thin', Roboto, Arial, Verdana, sans-serif;
+    
+}
+
+h1, h2, h3, h4, h5, h6, button, .nav-link, .navbar {
+    font-family: 'Josefin Sans Thin', Roboto, Arial, Verdana, sans-serif;
+}
+
+p, ul, textarea  {
+    font-family: 'Merriweather', 'Trueno Light', Roboto, Arial, Verdana, sans-serif;
+}
+
+.navbar {
+    background-image: url("../img/bg.png");
+}
+
+/* TagEditor classes */
+.searchtag {
+    cursor: pointer;
+    background-color: lightgreen;
+    padding: 0.25em 0.25em 0.25em 0.25em;
+    margin: 0.1em;
+    border-radius: 100px;
+    height: 1.5em;
+    display: inline-block;
+    justify-content: left;
+    align-items: center;
+}
+
+.searchtag .x {
+    cursor: pointer;
+    text-align: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0em;
+    border-radius: 50%;
+    background-color: darkgreen;
+    color: white;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.ap-profilecard-img {
+    height: 100px; 
+    min-width: 50px; 
+    padding-right: 1em;
+}
+
+.searchtagtextbox, .searchtagtextbox:active, .searchtagtextbox:hover, .searchtagtextbox:focus {
+    outline: none;
+    border: none;
+    padding: 10px;
+    background-color: lightgray;
+    border-radius: 0.5em;
+}

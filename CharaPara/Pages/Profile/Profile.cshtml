@@ -1,0 +1,377 @@
+﻿@page "/Profile/{profileIdString?}"
+@model ProfileModel
+
+<!-- Include Bootstrap JS and its dependencies (jQuery and Popper.js) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+
+.blur {
+    filter: blur(25px);
+    pointer-events: none;
+    transition: filter 0.3s;
+}
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(64, 64, 64, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .prompt {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+.scrollable-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.nav-tabs .nav-item {
+    display: inline-block;
+    float: none;
+}
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+}
+.profile-textcolor {
+    color: @Model.RequestedProfile.TextColor !important;
+}
+body {
+    background-color: @Model.RequestedProfile.ProfileColor;
+}
+.profile-bordercolor {
+    border-color: @Model.RequestedProfile.BorderColor;
+}
+</style>
+
+@if (Model.RequestedProfile.IsSensitive)
+{
+    <div id="overlay" class="overlay">
+        <div class="card p-5">
+            <p>This profile is marked as 'Sensitive' and may contain controversial or insensitive content.</p>
+            <button class="btn btn-primary" onclick="revealProfile()">Reveal Profile</button>
+        </div>
+    </div>
+}
+
+
+@{
+    var profileClass = Model.RequestedProfile.IsSensitive ? "blur" : "";
+}
+
+<div id="profileContainer" class="@profileClass">
+
+<div class="row">
+    <div class="col-2">
+        @if (Model.AvatarUrl != null) {
+            <img src="@Model.AvatarUrl" class="img-circle profile-img" alt="Profile Picture">
+        } else
+        {
+            <svg width="100%" height="100%" fill="@Model.RequestedProfile.TextColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+            </svg>
+            
+        }
+
+
+    </div>
+    <div class="col-10">
+        <h1 class="profile-textcolor">
+            @Model.RequestedProfile.Name
+        @switch(Model.RequestedProfile.Gender)
+        {
+            @case(Data.Model.Gender.Male):
+                <small style="color: mediumblue;">♂</small>
+            break;
+            @case(Data.Model.Gender.Female):
+                <small style="color: darkred;">♀</small>
+            break;
+        }
+        
+        
+        </h1>
+        <h3>@Model.RequestedProfile.Title</h3>
+        <div>
+            @foreach (var tag in Model.RequestedProfile.SearchTags)
+            {
+                <span class="badge bg-primary">@tag</span>
+            }
+        </div>
+        <div>
+            @if (Model.RequestedProfile.IsMature)
+            {
+                <span class="badge bg-danger" title="This profile is marked as Mature">M</span>
+            }
+            @if (Model.RequestedProfile.IsSensitive)
+            {
+                <span class="badge bg-danger" title="This profile is marked as Sensitive">S</span>
+            }
+        </div>
+
+        @if (Model.HasEditPermissions)
+        {
+            <p>
+                <a data-toggle="modal" data-target="#editModal" id="editProfileBtn">Edit Profile</a>
+            </p>
+
+            <p>
+                <a data-toggle="modal" data-target="#editModal" id="editAvatarBtn">Edit Avatar</a>
+            </p>
+
+
+            
+        }
+    </div>
+</div>
+<hr>
+<div class="row">
+    
+    <div class="col-lg-6">
+        <div class="scrollable-tabs">
+        <ul class="nav nav-tabs" id="textTabs" role="tablist">
+
+            @{ byte tabCount = 0; } 
+            @foreach (var tab in Model.ProfileTabs)
+            {
+                var tabTarget = "#tab" + tabCount;
+                var tabId = $"tab{tabCount}-button";
+                var tabAriaSelected = tabCount == 0 ? "true" : "false";
+                var tabClass = tabCount == 0 ? "active" : "";
+
+                <li class="nav-item" role="presentation">
+                        <a class="nav-link @tabClass profile-bordercolor" id="@tabId" data-bs-toggle="tab" data-bs-target="@tabTarget"
+                       type="button" role="tab" aria-controls="@tab.Name" aria-selected="@tabAriaSelected">
+                        @tab.Name
+                    </a>
+                </li>
+
+                tabCount++;
+            }
+
+            @if (Model.HasEditPermissions)
+            {
+                <li class="nav-item" role="presentation">
+                    <a class="btn btn-primary" id="createTabBtnTab"
+                           type="button" data-toggle="modal" data-target="#editModal" aria-selected="false" title="Add New Tab">
+                            <i class="bi bi-plus"></i>
+                            @if (tabCount < 3)
+                            {
+                                <small>(Add new tab)</small>
+                            }
+                        </a>
+                </li>
+            }
+        </ul>
+        </div>
+
+        <div class="tab-content" id="textTabsContent">
+            @{ tabCount = 0; }
+            @foreach (var tab in Model.ProfileTabs)
+            {
+                //var tabRef = "tab" + tabCount;
+                var tabId = "tab" + tabCount;
+                var tabActive = tabCount == 0 ? "show active" : "";
+
+                <div id="@tabId" class="tab-pane fade position-relative p-2 @tabActive" role="tabpanel" aria-labelledby="@tab.Name">
+                    
+                    <h2 class="profile-textcolor">@tab.Name</h2>
+
+                    @if (Model.HasEditPermissions) {
+                        var btnId = "editTabBtn" + tabCount;
+                        <button class="btn btn-primary position-absolute top-0 end-0" id="@btnId" data-toggle="modal" data-target="#editModal" >Edit</button>
+                    }
+                    <br />
+                    <div style="max-height: 50vh; overflow-y: auto;">@Html.Raw(tab.GeneratedHtmlContent)</div>
+                </div>
+
+                tabCount++;
+            }
+        </div>
+
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3>Gallery</h3>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editModal" id="createGalleryBtn">
+                        Add New Gallery Image
+                    </button>
+                </div>
+                
+
+            </div>
+        </div>
+        <div class="row">
+            <svg width="100%" height="100%" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+            </svg>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<!-- Button to trigger modal -->
+
+
+@if (Model.HasEditPermissions)
+{
+
+
+
+
+
+<!-- The Modal -->
+<div class="modal" id="editModal">
+    <div class="modal-dialog modal-lg" role="form">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="btn btn-danger" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body: The content will be loaded dynamically -->
+            <div class="modal-body" id="editModalContent">
+                <!-- Content will be loaded using AJAX -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="editAvatarModal">
+    <div class="modal-dialog modal-lg" role="form">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body: The content will be loaded dynamically -->
+            <div class="modal-body" id="editAvatarModalContent">
+                <!-- Content will be loaded using AJAX -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="editProfileModal">
+    <div class="modal-dialog modal-lg" role="form">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body: The content will be loaded dynamically -->
+            <div class="modal-body" id="editProfileModalContent">
+                <!-- Content will be loaded using AJAX -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="createTabModal">
+    <div class="modal-dialog modal-lg" role="form">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body" id="createTabModalContent">
+                <!-- AJAX Loaded Content -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Include jQuery for AJAX call -->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+
+
+    function revealProfile() {
+        var container = document.getElementById('profileContainer');
+        var overlay = document.getElementById('overlay');
+        container.classList.remove('blur');
+        overlay.style.display = 'none';
+    }
+
+
+
+    var loadingPlaceholder = 
+        `<center><div class="spinner-border" role="status"><span class="sr-only"></span></div></center>`;
+
+    $(document).ready(function(){
+
+        $("#editProfileBtn").click(function(){
+                loadModalPage("../Profile/EditProfile?p=@Model.RequestedProfile.Id");
+                //$("#editModalContent").load("../Profile/EditProfile?p=@Model.RequestedProfile.Id");
+        });
+        $("#editAvatarBtn").click(function () {
+                loadModalPage("../Profile/EditAvatar?p=@Model.RequestedProfile.Id");
+                //$("#editModalContent").load("../Profile/EditAvatar?p=@Model.RequestedProfile.Id");
+        });
+        $("#createTabBtn").click(function () {
+                loadModalPage("../Profile/CreateTab?p=@Model.RequestedProfile.Id");
+                //$("#editModalContent").load("../Profile/CreateTab?p=@Model.RequestedProfile.Id");
+        });
+        $("#createTabBtnTab").click(function () {
+                loadModalPage("../Profile/CreateTab?p=@Model.RequestedProfile.Id");
+                //$("#editModalContent").load("../Profile/CreateTab?p=@Model.RequestedProfile.Id");
+        });
+        $("#createGalleryBtn").click(function () {
+                loadModalPage("../Profile/AddGalleryImage?p=@Model.RequestedProfile.Id");
+                //$("#editModalContent").load("../Profile/AddGalleryImage?p=@Model.RequestedProfile.Id");
+        });
+
+        function loadModalPage(url) {
+            $("#editModalContent").html(loadingPlaceholder);
+            $("#editModalContent").load(url);
+        }
+
+        @{ byte btnCount = 0; }
+        @foreach (var tab in Model.ProfileTabs)
+        {
+            var btnId = "editTabBtn" + @btnCount;
+            <text>
+                $("#@btnId").click(function () {
+                    $("#editModalContent").load("../Profile/EditTab?t=@tab.Id");
+                });
+            </text>
+            btnCount++;
+        }
+    });
+</script>
+
+}

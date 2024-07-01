@@ -1,0 +1,162 @@
+﻿@page
+@model CharaPara.Pages.Profile.IndexModel
+
+@{
+    ViewData["Title"] = "Your Profiles";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].ProfileType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].SensitiveStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].VisibleStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].ModerationStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].TextColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].ProfileColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].BorderColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].DateTimeCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].DateTimeModified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].DateTimeAvatarModified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].DateTimeLastSeen)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].DateTimeLastSeenPublic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].DateTimeDeleted)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].AppUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].SearchTagString)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].AdvertPost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].ImageFileName_Avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Profile[0].ImageFileName_Background)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Profile) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfileType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SensitiveStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Summary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VisibleStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModerationStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TextColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfileColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BorderColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeModified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeAvatarModified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeLastSeen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeLastSeenPublic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateTimeDeleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppUser.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SearchTagString)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdvertPost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageFileName_Avatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageFileName_Background)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

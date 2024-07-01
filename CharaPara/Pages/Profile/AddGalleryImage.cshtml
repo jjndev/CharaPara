@@ -1,0 +1,45 @@
+﻿@page
+@model CharaPara.Pages.Profile.AddGalleryImageModel
+@{
+    Layout = null;
+}
+
+
+<h2>Add Gallery Image</h2>
+
+
+<form method="post" enctype="multipart/form-data" id="imgupload-fileForm" data-url='@Model.PreSignedUrl'>
+    <label for="fileUpload">Choose an image to upload:</label><br />
+    <input id="fileUpload" type="file" accept="image/jpeg image/png image/gif image/bmp" name="file" />
+</form>
+<form method="post" id="imgupload-dataForm" asp-page="../Profile/AddGalleryImage">
+    <div class="form-group">
+        <label asp-for="GalleryImageVM.CreationType" class="control-label"></label>
+        <select asp-for="GalleryImageVM.CreationType" class="form-control" required>
+            <option value="Artist">Artist</option>
+            <option value="Editor">Editor</option>
+            <option value="Photographer">Photographer</option>
+            <option value="SourceMaterial">Source Material</option>
+            <option value="AIModel">AI Model</option>
+        </select>
+        <span asp-validation-for="GalleryImageVM.CreationType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="GalleryImageVM.SourceCredit" class="control-label" placeholder="(Name of Creator, Source Material, Generator Tool, Etc)"></label>
+        <input asp-for="GalleryImageVM.SourceCredit" class="form-control" />
+        <span asp-validation-for="GalleryImageVM.SourceCredit" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="GalleryImageVM.ProfileId" />
+</form>
+<input type="button" value="Upload Image" id="imgupload-submitButton" class="btn btn-primary" />
+
+
+
+
+
+<script>
+    var preSignedUrl = '@Model.PreSignedUrl'
+</script>
+<partial name="_ValidationScriptsPartial" />
+<partial name="_ImageUploadFormScriptsPartial" />
+

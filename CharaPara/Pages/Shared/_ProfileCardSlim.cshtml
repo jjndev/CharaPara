@@ -1,0 +1,45 @@
+﻿@model CharaPara.Data.Model.Profile
+@{
+    var linkModifier = (ViewData["LinkOnNewTab"] is null) ? "" : "target=\"_blank\"";
+    var profUrl = "../Profile/" + Model.Id;
+}
+
+
+<div class="card" style="background-color: @Model.ProfileColor ; border-color: @Model.BorderColor ;">
+    <div class="card-body">
+        <div class=" d-flex">
+            <div class="ap-profilecard-img">
+                <a href="@profUrl " @linkModifier>
+                    @if (Model.ImageFileName_Avatar != null)
+                    {
+                        <img class="profile-img " src="@Model.ImageFileName_Avatar" alt="Profile Icon">
+                    }
+                    else
+                    {
+                        <svg fill="@Model.TextColor " height="32px" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg>
+                    }
+                </a>
+            </div>
+            <div>
+                <a href="@profUrl " @linkModifier >
+                    <h3 class="card-title" style="color: @Model.TextColor ">@Model.Name </h3>
+                </a>
+                <h6 class="card-text">@Model.Title </h6>
+                <div>
+                    @{
+                        var tagCount = 0;
+                    }
+                    @foreach (var tag in Model.SearchTags)
+                    {
+                        <span class="badge bg-primary">@tag </span>
+                        tagCount++;
+                        if (tagCount >= 3) break;
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

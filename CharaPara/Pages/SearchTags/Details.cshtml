@@ -1,0 +1,49 @@
+﻿@page
+@model CharaPara.Pages.SearchTags.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>SearchTag</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.SearchAliases)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.SearchAliases)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.ParentSearchTag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.ParentSearchTag.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.SensitiveStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.SensitiveStatus)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.SearchTag.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

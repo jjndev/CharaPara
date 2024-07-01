@@ -1,0 +1,28 @@
+﻿@page
+@model CharaPara.Pages.Profile._ProfileNotificationPartialModel
+@{
+}
+<!-- _ProfileNotificationPartial.cshtml -->
+@if (TempData != null)
+{
+    @if (TempData["Notification"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            @TempData["Notification"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+    @if (TempData["Notification"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            @TempData["Notification"]
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+}
+

@@ -1,0 +1,61 @@
+﻿@page
+@model CharaPara.Pages.Profile.CreateCharacterModel
+@using CharaPara.Data
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Profile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Profile.Name" class="control-label"> Character Name (Required)</label>
+                <input asp-for="Profile.Name" class="form-control" placeholder="The name of your character." />
+                <span asp-validation-for="Profile.Name" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Profile.Title" class="control-label"></label>
+                <input asp-for="Profile.Title" class="form-control" placeholder="A short summary of your character."/>
+                <span asp-validation-for="Profile.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Gender" class="control-label"></label>
+                <select asp-for="Profile.Gender" asp-items="Html.GetEnumSelectList<Data.Model.Gender>()" class="form-control" placeholder="The gender that best describes your character."></select>
+                <span asp-validation-for="Profile.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.OriginCategory" class="control-label"></label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" asp-for="Profile.OriginCategory" value="1" class="form-check-input" />
+                        <label for="origin-option-oc" class="form-check-label">Original Character</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="radio" asp-for="Profile.OriginCategory" value="3" class="form-check-input" />
+                        <label for="origin-option-fc" class="form-check-label">Canon Character</label>
+                    </div>
+                </div>
+                <span asp-validation-for="Profile.OriginCategory" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

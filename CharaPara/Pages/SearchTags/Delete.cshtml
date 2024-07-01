@@ -1,0 +1,52 @@
+﻿@page
+@model CharaPara.Pages.SearchTags.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SearchTag</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.SearchAliases)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.SearchAliases)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.ParentSearchTag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.ParentSearchTag.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SearchTag.SensitiveStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SearchTag.SensitiveStatus)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="SearchTag.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+﻿@page "/up"
+@model CharaPara.Pages.UploadTestModel
+@{
+    ViewData["Title"] = "UploadTest";
+
+}
+
+<h1>UploadTest</h1>
+
+
+<form method="post" enctype="multipart/form-data">
+    <label class="form-label">Upload File</label>
+    <br />
+    <input type="file" asp-for="FormFile" />
+    <span asp-validation-for="FormFile"></span>
+    <button type="submit" class="btn btn-primary">Upload File</button>
+</form>

@@ -1,0 +1,30 @@
+﻿@page "/Profile/EditAvatar"
+@model EditAvatarModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = null;
+}
+
+<h1>Edit</h1>
+
+<h4>Profile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+
+
+        <form method="post" enctype="multipart/form-data">
+
+            <input type="hidden" asp-for="ProfileVM.Id" />
+
+            <label class="form-label">Upload File</label>
+            <br />
+            <input type="file" asp-for="ProfileVM.Avatar" />
+            <span asp-validation-for="ProfileVM.Avatar"></span>
+            <img id="previewImage" src="#" alt="Image preview" height="200" style="display:none;" />
+            <button type="submit" class="btn btn-primary">Upload Avatar</button>
+            
+        </form>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@page "/Profile/EditTab"
+@model EditTabModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateTab</title>
+</head>
+<body>
+
+<h4>Editing Tab '@Model.TabViewModel.Name'</h4>
+<hr />
+<div class="container">
+
+    <form method="post" asp-page="../Profile/EditTab">
+        <input type="hidden" asp-for="TabViewModel.TabId" />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+                <label asp-for="TabViewModel.Name" class="control-label">Tab Name</label>
+                <input asp-for="TabViewModel.Name" class="form-control" />
+                <span asp-validation-for="TabViewModel.Name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TabViewModel.TabPosition" class="control-label">Tab Position</label>
+            <input type="number" min="1" max="250" asp-for="TabViewModel.TabPosition" class="form-control" />
+                <span asp-validation-for="TabViewModel.TabPosition" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+                <label asp-for="TabViewModel.RawContent" class="control-label">Tab Contents</label>
+                <textarea asp-for="TabViewModel.RawContent" style="width: 100%; height: 50vh;"class="form-control"></textarea>
+                <span asp-validation-for="TabViewModel.RawContent" class="text-danger"></span>
+        </div>
+            
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary"  />
+        </div>
+    </form>
+
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>

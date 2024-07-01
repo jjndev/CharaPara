@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "vqxPmCgw6RZVjuXD2YEvEko9scVAQOs4vgXkwP29EDfq9JOwHE3gzfvRALKHHCNaV4xuB9yUjJ+3guFvkjU8Zw==",
+  "success": true,
+  "projectFilePath": "D:\\Users\\Jordan\\Documents\\Visual Studio 2022\\Projects\\CharaPara\\LambdaHandleUserImageUpload\\LambdaHandleUserImageUpload.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jordan\\.nuget\\packages\\amazon.lambda.core\\2.2.0\\amazon.lambda.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Jordan\\.nuget\\packages\\amazon.lambda.s3events\\3.1.0\\amazon.lambda.s3events.3.1.0.nupkg.sha512",
+    "C:\\Users\\Jordan\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.4.1\\amazon.lambda.serialization.systemtextjson.2.4.1.nupkg.sha512",
+    "C:\\Users\\Jordan\\.nuget\\packages\\awssdk.core\\3.7.302.12\\awssdk.core.3.7.302.12.nupkg.sha512",
+    "C:\\Users\\Jordan\\.nuget\\packages\\awssdk.s3\\3.7.305.28\\awssdk.s3.3.7.305.28.nupkg.sha512",
+    "C:\\Users\\Jordan\\.nuget\\packages\\sixlabors.imagesharp\\3.1.4\\sixlabors.imagesharp.3.1.4.nupkg.sha512",
+    "C:\\Users\\Jordan\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.1\\microsoft.netcore.app.crossgen2.win-x64.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

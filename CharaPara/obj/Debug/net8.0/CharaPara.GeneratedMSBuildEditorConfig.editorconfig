@@ -1,0 +1,219 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CharaPara
+build_property.RootNamespace = CharaPara
+build_property.ProjectDir = D:\Users\Jordan\Documents\Visual Studio 2022\Projects\CharaPara\CharaPara\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Users\Jordan\Documents\Visual Studio 2022\Projects\CharaPara\CharaPara
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/App.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1N0YXR1c01lc3NhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Browse/Profiles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnJvd3NlXFByb2ZpbGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Create/Character/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlXENoYXJhY3RlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/EditProfileTags.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdFByb2ZpbGVUYWdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/AddGalleryImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxBZGRHYWxsZXJ5SW1hZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/CreateTab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxDcmVhdGVUYWIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/DeleteTab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxEZWxldGVUYWIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/EditAvatar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxFZGl0QXZhdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/EditGalleryImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxFZGl0R2FsbGVyeUltYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxFZGl0UHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/EditTab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxFZGl0VGFiLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/UndoDeleteTab.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxVbmRvRGVsZXRlVGFiLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Profile/_ProfileNotificationPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxfUHJvZmlsZU5vdGlmaWNhdGlvblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/SearchTags/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoVGFnc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/SearchTags/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoVGFnc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/SearchTags/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoVGFnc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/SearchTags/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoVGFnc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/SearchTags/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VhcmNoVGFnc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_ImageUploadFormScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9JbWFnZVVwbG9hZEZvcm1TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_ProfileCard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Qcm9maWxlQ2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_ProfileCardSlim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Qcm9maWxlQ2FyZFNsaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_ProfileEditNotif.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Qcm9maWxlRWRpdE5vdGlmLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/UploadTest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBsb2FkVGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Users/Jordan/Documents/Visual Studio 2022/Projects/CharaPara/CharaPara/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-mlqb2w6jm2

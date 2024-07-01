@@ -1,0 +1,53 @@
+﻿@page "/Account"
+@model CharaPara.Areas.Identity.Pages.Account.IndexModel
+<h3>@ViewData["Title"]</h3>
+<partial name="_StatusMessage" for="StatusMessage" />
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var profile in Model.Profiles)
+                {
+                    <tr>
+                        <td><a href="/Profile/@profile.Id">@profile.Name</a></td>
+                        <td>@profile.Gender</td>
+                        <td>@profile.Title</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <td><a href="/NewCharacter">Create New Character</a></td> 
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Gender</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var profile in Model.Profiles)
+                {
+                    <tr>
+                        <td><a href="/Profile/@profile.Id">@profile.Name</a></td>
+                        <td>@profile.Gender</td>
+                        <td>@profile.Title</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <td><a href="/NewWriter">Create New Writer</a></td>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
